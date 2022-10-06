@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1 id="title">My product list</h1>
+    </head>
+    <body>
+        <div>
+            <br>
+            <input type="text" id="R">
+        </div>
+        <ul id="list">
+        </ul>
+        <button id="plus" >+</button>
+        <button id="sub">-</button>
+        <style>
+            body {
+              background-image: url('http://sodiet.co.il/files/image/gallery/15888540770459448001588854077.png');
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: cover;
+              color : rgb(0, 0, 0);
+            }
+            </style>
+        <br>
+        <br>
+        <script>
+        let prodact=0 
+            let plus = document.querySelector('#plus');
+            let list = document.querySelector('#list');
+            let input = document.querySelector('#R');
+    
+            plus.onclick = plusf;
+            let minus = document.querySelector('#sub');
+            minus.onclick = minusf;
+            function plusf() {
+                let prodactli = document.createElement(`li`);
+                let minus = document.createElement ('button');
+                
+                minus.innerHTML += '-'
+                minus.onclick = () => {
+                    list.removeChild(prodactli);
+                }
+                
+                prodactli.innerHTML = input.value ;
+                prodactli.appendChild(minus)
+                list.appendChild(prodactli);
+                prodact++
+                console.log (prodact)
+                input.value = ''
+            }
+           
+    </script>
+    </body>
+    
+</html>
